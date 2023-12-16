@@ -1,0 +1,50 @@
+.bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+}
+
+.bar .bar__logo h1 {
+  font-size: 1.5em;
+  font-weight: 500
+}
+
+.bar .bar__menu {
+  display: flex;
+  align-items: center;
+
+  button {
+    /* reset all style */
+    background: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.bar .bar__menu .bar__menu--prev {
+  rotate: 90deg;
+}
+
+.bar .bar__menu .bar__menu--next {
+  rotate: 270deg;
+}
+
+.bar__menu--prev div, .bar__menu--next div {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.bar__menu--prev img, .bar__menu--next img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bar__menu--month {
+  width: 124px;
+  text-align: center;
+  font-size: 1em;
+}

@@ -1,0 +1,19 @@
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  vertical-align: middle;
+
+  height: 3rem;
+  background-color: #f0f0f0;
+  border-top-left-radius: 16px; 
+  border-top-right-radius: 16px;
+}
+
+.calendar-header .calendar-header__day {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

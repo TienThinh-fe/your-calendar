@@ -1,0 +1,8 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  vertical-align: middle;
+
+  border-top-left-radius: 16px; 
+  border-top-right-radius: 16px;
+}
