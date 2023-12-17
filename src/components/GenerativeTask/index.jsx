@@ -1,8 +1,24 @@
+import axios from 'axios'
+
 import './style.css'
 
 const GenerativeTask = () => {
-  const handleGenTask = () => {
-    console.log('gen Task')
+  const handleGenTask = async () => {
+    const API_URL = import.meta.env.VITE_API_URL
+
+    try {
+      const res = await axios.post(`${API_URL}/generative`, {
+        message: 'Hello World!',
+      })
+
+      if (res.status === 200 || res.status === 201) {
+        console.log(res.data)
+      } else {
+        console.log(res)
+      }
+    } catch {
+      console.log('Error')
+    }
   }
 
   return (
