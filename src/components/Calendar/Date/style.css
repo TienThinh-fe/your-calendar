@@ -12,3 +12,8 @@
   border-radius: 50%;
   background-color: #afd5f3;
 }
+
+.calendar__date--current:hover {
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
