@@ -3,6 +3,7 @@
   border: 1px solid #ececec;
   text-align: center;
   padding: 8px;
+  font-size: 1.2rem;
 }
 
 .calendar__date--today span { 

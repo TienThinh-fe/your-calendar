@@ -1,7 +1,9 @@
-import useMonthStore from '../../stores/Month'
-import { getMonthText } from '../../utils'
+import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
+import useMonthStore from '@/stores/Month'
+import { getMonthText } from '@/utils'
 
 import './style.css'
+import GenerativeTask from '../GenerativeTask'
 
 export const Bar = () => {
   const [currentSelectedMonth, setCurrentSelectedMonth] = useMonthStore(
@@ -29,17 +31,20 @@ export const Bar = () => {
       <div className="bar__logo">
         <h1>Calendar</h1>
       </div>
-      <div className="bar__menu">
-        <div className="bar__menu--prev">
-          <button onClick={handlePrev}>
-            <img src="public/arrow.png" />
-          </button>
-        </div>
-        <div className="bar__menu--month">{month}</div>
-        <div className="bar__menu--next">
-          <button onClick={handleNext}>
-            <img src="public/arrow.png" />
-          </button>
+      <div className="bar__wrapper">
+        <GenerativeTask />
+        <div className="bar__menu">
+          <div className="bar__menu--prev">
+            <button onClick={handlePrev}>
+              <ChevronLeftIcon />
+            </button>
+          </div>
+          <div className="bar__menu--month">{month}</div>
+          <div className="bar__menu--next">
+            <button onClick={handleNext}>
+              <ChevronRightIcon />
+            </button>
+          </div>
         </div>
       </div>
     </div>

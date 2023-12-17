@@ -10,7 +10,7 @@
 }
 
 .calendar-header .calendar-header__day {
-  font-size: 1rem;
+  font-size: 0.9em;
   font-weight: 500;
   text-align: center;
   display: flex;

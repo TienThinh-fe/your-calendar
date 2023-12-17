@@ -4,10 +4,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 80px;
+  margin-bottom: 24px;
+
+  .bar__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
 }
 
 .bar .bar__logo h1 {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 500
 }
 
@@ -23,29 +30,15 @@
   }
 }
 
-.bar .bar__menu .bar__menu--prev {
-  rotate: 90deg;
-}
-
-.bar .bar__menu .bar__menu--next {
-  rotate: 270deg;
-}
-
-.bar__menu--prev div, .bar__menu--next div {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-}
-
-.bar__menu--prev img, .bar__menu--next img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.bar__menu--prev button, .bar__menu--next button  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bar__menu--month {
   width: 124px;
   text-align: center;
-  font-size: 1em;
-  margin: 0 12px;
+  font-size: 0.9em;
+  margin: 0 4px;
 }
