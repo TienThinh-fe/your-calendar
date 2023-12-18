@@ -1,0 +1,39 @@
+.generative-form {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+
+  .form-illustrate {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #a7a7a7;
+    }
+  }
+
+  .form-input {
+    margin-top: 3rem;
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .Fieldset {
+        all: unset;
+      }
+
+      .Input {
+        width: 120%;
+        height: 2rem;
+      }
+    }
+  }
+}

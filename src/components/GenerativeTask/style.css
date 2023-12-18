@@ -40,3 +40,9 @@
   fill: white;
   transform: scale(1.4);
 } 
+
+
+.DialogGenerative {
+  width: 560px !important;
+  height: 320px !important;
+}
