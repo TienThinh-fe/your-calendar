@@ -1,3 +1,4 @@
+import useMonthStore from '@/stores/Month'
 import {
   Close,
   Content,
@@ -7,6 +8,8 @@ import {
   Trigger,
 } from '@radix-ui/react-dialog'
 import { Cross2Icon } from '@radix-ui/react-icons'
+import axios from 'axios'
+import { isEmpty } from 'lodash'
 import { useState } from 'react'
 import GenerativeForm from './Form'
 
@@ -15,34 +18,44 @@ import './style.css'
 const wait = () => new Promise((resolve) => setTimeout(resolve, 100))
 
 const GenerativeTask = () => {
-  // const handleGenTask = async () => {
-  //   const API_URL = import.meta.env.VITE_API_URL
-
-  //   try {
-  //     const res = await axios.post(`${API_URL}/generative`, {
-  //       message: 'Hello World!',
-  //     })
-
-  //     if (res.status === 200 || res.status === 201) {
-  //       console.log(res.data)
-  //     } else {
-  //       console.log(res)
-  //     }
-  //   } catch {
-  //     console.log('Error')
-  //   }
-  // }
   const [task, setTask] = useState('')
   const [open, setOpen] = useState(false)
+  const [createTask, removeAllTasks] = useMonthStore((state) => [
+    state.createTask,
+    state.removeAllTasks,
+  ])
 
   const handleChangeTask = (e) => {
     setTask(e.target.value)
   }
 
-  const handleGenerateTask = (e) => {
+  const handleGenerateTask = async (e) => {
     e.preventDefault()
 
-    console.log('task', task)
+    const API_URL = import.meta.env.VITE_API_URL
+
+    try {
+      const res = await axios.post(`${API_URL}/generative`, {
+        message: task,
+      })
+
+      if (res.status === 200 || res.status === 201) {
+        const { day, task, isFree } = res?.data || {}
+
+        if (!isEmpty(day) && !isEmpty(task)) {
+          createTask(task, day)
+        }
+
+        if (isFree) {
+          console.log('isFree')
+          removeAllTasks(day)
+        }
+      } else {
+        console.log(res)
+      }
+    } catch (error) {
+      console.log('Error: ', error)
+    }
     wait().then(() => setOpen(false))
   }
 
